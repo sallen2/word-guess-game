@@ -1,8 +1,8 @@
-var gameNameArr = ["people", "people", "people"];
+var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario", "mortal kombat", "Doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "starcraft"];
 var userGuess;
 var line;
 var hangmanWord;
-var numberOfGuess = 16;
+var numberOfGuess = 20;
 var guesses = [];
 var userScore = 0;
 var computerScore = 0;
@@ -65,21 +65,21 @@ numberOfGuesses();
 document.onkeydown = function(){
     document.getElementById("currentGuess").textContent = event.key;
     userGuess = document.getElementById("currentGuess").textContent;
-        userGuessCompare(userGuess);
-        recordGuesses(userGuess);
-        var theCorrectWord = document.getElementById("line").textContent;
+    userGuessCompare(userGuess);
+    recordGuesses(userGuess);
+    var theCorrectWord = document.getElementById("line").textContent;
         if(theCorrectWord === hangmanWord){
             recordUserScore();
             randomWord();
             line = printHangmanLine();
-            numberOfGuess = 16;
+            numberOfGuess = 21;
             guesses =[];
         }else if (numberOfGuess === 0 && theCorrectWord !== hangmanWord){
             recordComputerScore();
             randomWord();
             line = printHangmanLine();
             numberOfGuesses();
-            numberOfGuess = 16;
+            numberOfGuess = 21;
             guesses =[];
         }  
 }

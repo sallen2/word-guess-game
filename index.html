@@ -4,24 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Retro Video Games Hangman</h1>
-    <hr>
-    <h2>Rules</h2>
-    <ul>
+    <h1 class="titleMargin">Retro Video Games Hangman</h1>
+    </div>
+    <h2 class="titleMargin rulesMargin">Rules</h2>
+    <ul class="titleMargin">
         <li>Press an key to start!</li>
         <li>You have a limit number of guesses. So guess carfully.</li>
         <li>Spaces count, so if the word is Street Fighter you must account for the space</li>
         <li>Have fun an try your best!</li>
     </ul>
-    <h1>Your Score: <span id="userScore"></span></h1>
-    <h1>Computer Score: <span id="computerScore"></span></h1>
-    <h1>Your current guessed: <span id="currentGuess"></span></h1>
-    <h2>You have <span id="numberOfGuess">20</span> guesses left.</h2>
-    <h2>You've already guessed: <span id="guess"></span></h2>
-    <h3 id="line"></h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h1 class="titleMargin">Your Score: <span id="userScore"></span></h1>
+            </div>
+            <div class="col-sm-3">
+                <h1 class="titleMargin">Computer Score: <span id="computerScore"></span></h1>
+            </div>
+            <div class="col-sm-3">
+                <h1 class="titleMargin">Your current guessed: <span id="currentGuess"></span></h1>
+            </div>
+            <div class="col-sm-3">
+                <h1 class="titleMargin">You have <span id="numberOfGuess">20</span> guesses left.</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="titleMargin">You've already guessed: <span id="guess"></span></h2>
+            </div>
+            <div class="col-md-6">
+                <h3 class="titleMargin" id="line"></h3>
+            </div>
+        </div>
+    </div>
+            
+    
+    
+    
+    
+    
+    
+    
     <h1 id="Congrats"></h1>
     <script src="assets/javascript/game.js"></script>
 </body>

@@ -1,11 +1,27 @@
-.titleMargin{
-   margin: 10px 40%; 
+body{
+    background-color: #c5cddb;
 }
 
-.rulesMargin{
-    margin: 45px 40%;
+.cartridge{
+    margin-left: 23%;
 }
 
-.scoreMargin{
-    margin: 65px 40%;
+.columnFlex{
+    display: flex;
+    flex-direction: column;
+    margin-left: 32%;
+    margin-bottom: 50px;
+    margin-top: 10%;
+    border: 5px black dashed;
+    width: 470px;
+    padding: 2%;
+    text-align: center;
 }
+
+.centerContent{
+    margin-bottom: 14%;
+    margin-left: 42%;
+}
+
+
+

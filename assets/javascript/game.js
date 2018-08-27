@@ -1,6 +1,6 @@
-var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario", "mortal kombat", "Doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "starcraft"];
+var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario", "mortal kombat", "doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "starcraft"];
 var userGuess;
-var line;
+var line = [];
 var hangmanWord;
 var numberOfGuess = 20;
 var guesses = [];
@@ -13,9 +13,16 @@ function randomWord(){
 }
 
 function printHangmanLine(){
-    var line = ['-'.repeat(hangmanWord.length)];
+    var kebab = "-";
+    var line = [];
+    for(var i = 0; i < hangmanWord.length; i++){
+        if(hangmanWord.charAt(i) === " "){
+            line[i] = " ";
+        }else
+        line[i] = kebab;
+    }
     line.toString();
-    document.getElementById("line").innerHTML = line;
+    document.getElementById("line").innerHTML = line.join("");
     return line;
 }
 
@@ -56,9 +63,15 @@ function recordComputerScore(){
     document.getElementById("computerScore").textContent = computerScore;
 }
 
+function playSong(){
+    
+}
+
 // computer picks random word
 randomWord();
 line = printHangmanLine();
+console.log(hangmanWord);
+console.log(line);
 numberOfGuesses();
 
 // user guesses

@@ -1,5 +1,6 @@
 body{
     background-color: #c5cddb;
+    font-family: 'Jua', sans-serif; 
 }
 
 .cartridge{
@@ -27,4 +28,21 @@ body{
     font-size: 3em;
 }
 
+#imgInsert{
+    position: relative;
+    top: 85px;
+    margin: 0 54.5%;
+    margin-top: 20px;
+    width: 10%;
+    height: 5%;
+}
+
+#songName{
+    font-family: 'Jua', sans-serif;
+    font-size: 50px;
+    position: relative;
+    top: 230px;
+    right: 10px;
+    margin-left: 35%;
+}
 

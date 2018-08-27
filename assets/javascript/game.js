@@ -1,4 +1,4 @@
-var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario", "mortal kombat", "doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "starcraft"];
+var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario world", "mortal kombat", "doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "starcraft"];
 var userGuess;
 var line = [];
 var hangmanWord;
@@ -6,6 +6,7 @@ var numberOfGuess = 20;
 var guesses = [];
 var userScore = 0;
 var computerScore = 0;
+var themeSongArr = [];
 var hangMan = {}
 
 function randomWord(){
@@ -40,11 +41,9 @@ function updateHangmanLine(guess, i){
 }
 
 function numberOfGuesses(){
-    document.onkeypress = function(){
     numberOfGuess = numberOfGuess - 1;
     document.getElementById("numberOfGuess").textContent = numberOfGuess;
     return numberOfGuess;
-    }
 }
 
 function recordGuesses(guess){
@@ -54,8 +53,8 @@ function recordGuesses(guess){
 }
 
 function recordUserScore(){
-        userScore+=1;
-        document.getElementById("userScore").textContent = userScore;
+    userScore+=1;
+    document.getElementById("userScore").textContent = userScore;
 }
 
 function recordComputerScore(){
@@ -63,42 +62,54 @@ function recordComputerScore(){
     document.getElementById("computerScore").textContent = computerScore;
 }
 
-function playSong(){
+function playThemeSong(){
+    var themeSong = document.getElementById("gameThemeSong");
+    themeSong.play();
+}
+
+function removeGuess(guess){
+    guesses.pull(guess);
+}
+
+function guessCheck(){
+    for(var i = 0; i <= guesses.length; i++){
+        if(userGuess !== guesses[i]){
+            userGuessCompare(userGuess);
+        }else{
+            removeGuess(i);
+        } 
+    }
     
 }
 
 // computer picks random word
 randomWord();
 line = printHangmanLine();
-console.log(hangmanWord);
-console.log(line);
-numberOfGuesses();
-
 // user guesses
-document.onkeydown = function(){
+document.onkeydown = function(event){
     document.getElementById("currentGuess").textContent = event.key;
     userGuess = document.getElementById("currentGuess").textContent;
-    userGuessCompare(userGuess);
+    guessCheck();
+    numberOfGuesses();
     recordGuesses(userGuess);
     var theCorrectWord = document.getElementById("line").textContent;
-        if(theCorrectWord === hangmanWord){
-            recordUserScore();
-            randomWord();
-            line = printHangmanLine();
-            numberOfGuess = 21;
-            guesses =[];
-        }else if (numberOfGuess === 0 && theCorrectWord !== hangmanWord){
-            recordComputerScore();
-            randomWord();
-            line = printHangmanLine();
-            numberOfGuesses();
-            numberOfGuess = 21;
-            guesses =[];
-        }  
+    if(theCorrectWord === hangmanWord){
+        recordUserScore();
+        randomWord();
+        line = printHangmanLine();
+        numberOfGuess = 21;
+        guesses =[];
+        recordGuesses();
+        document.getElementById("numberOfGuess").textContent = 21;
+        document.getElementById("currentGuess").textContent = "";
+    }else if (numberOfGuess === 0 && theCorrectWord !== hangmanWord){
+        recordComputerScore();
+        randomWord();
+        line = printHangmanLine();
+        numberOfGuess = 21;
+        guesses =[];
+        recordGuesses();
+        document.getElementById("numberOfGuess").textContent = 0;
+        document.getElementById("currentGuess").textContent = "";
+    }  
 }
-
-
-
-
-
- 

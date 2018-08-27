@@ -1,4 +1,4 @@
-var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario world", "mortal kombat", "doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "starcraft"];
+var gameNameArr = ["mario", "sonic", "ryu", "castlevania", "contra", "crash", "street fighter", "super mario world", "zelda", "mortal kombat", "doom", "super metroid", "tomb raider", "final fantasy", "tekken", "goldeneye", "killer instinct", "donkey kong country", "starcraft"];
 var userGuess;
 var line = [];
 var hangmanWord;

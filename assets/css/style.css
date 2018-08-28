@@ -1,6 +1,8 @@
 body{
-    background-color: #c5cddb;
+    background-color: #487fb3;
+    color: #000000;
     font-family: 'Jua', sans-serif; 
+    height: 1382px;
 }
 
 .cartridge{
@@ -8,9 +10,11 @@ body{
 }
 
 .columnFlex{
+    position: relative;;
+    bottom: 800px;
     display: flex;
     flex-direction: column;
-    margin-left: 32%;
+    margin-left: 34%;
     margin-bottom: 50px;
     margin-top: 10%;
     border: 5px black dashed;
@@ -20,28 +24,35 @@ body{
 }
 
 .centerContent{
-    margin-bottom: 14%;
     margin-left: 42%;
 }
 
 #line{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 #imgInsert{
     position: relative;
-    top: 85px;
+    top: 405px;
     margin: 0 54.5%;
     margin-top: 20px;
     width: 10%;
-    height: 5%;
+    height: 10%;
+}
+
+#gameBoy{
+    z-index: -1;
+    position: relative;
+    top: 20px;
+    right: 240px;
+    
 }
 
 #songName{
     font-family: 'Jua', sans-serif;
     font-size: 50px;
     position: relative;
-    top: 230px;
+    top: 537px;
     right: 10px;
     margin-left: 35%;
 }

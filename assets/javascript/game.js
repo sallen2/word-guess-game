@@ -106,6 +106,7 @@ line = printHangmanLine();
 document.onkeydown = function(event){
     document.getElementById("currentGuess").textContent = event.key;
     userGuess = document.getElementById("currentGuess").textContent;
+    // debugger;
     guessCheck();
     numberOfGuesses();
     recordGuesses(userGuess);

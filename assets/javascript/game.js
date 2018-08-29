@@ -94,7 +94,6 @@ function guessCheck(){
 
 // computer picks random word
 randomWord();
-console.log(hangmanWord);
 line = printHangmanLine();
 // user guesses
 document.onkeydown = function(event){
@@ -121,7 +120,6 @@ document.onkeydown = function(event){
         numberOfGuess = 21;
         guesses =[];
         recordGuesses();
-        console.log(document.getElementById("gameThemeSong"))
         document.getElementById("numberOfGuess").textContent = 21;
         document.getElementById("currentGuess").textContent = "";
     }else if (numberOfGuess === 0 && theCorrectWord !== hangmanWord){

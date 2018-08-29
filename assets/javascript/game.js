@@ -8,7 +8,7 @@ var hangmanWord;
 var themeSong;
 var boxArt;
 var numberOfGuess = 20;
-var guesses = [];
+var guesses = [" "];
 var userScore = 0;
 var computerScore = 0;
 var themeSongArr = [];
@@ -83,19 +83,13 @@ function showBoxArt() {
     document.getElementById("songName").textContent = "Now playing ";
 }
 
-function removeGuess(guess){
-    guesses.pull(guess);
-}
-
 function guessCheck(){
-    for(var i = 0; i <= guesses.length; i++){
-        if(userGuess !== guesses[i]){
-            userGuessCompare(userGuess);
-        }else{
-            removeGuess(i);
-        } 
+    for(var i = 0; i < guesses.length; i++){
+        if(userGuess === guesses[i]){
+            return false;
+        }
     }
-    
+    return true; 
 }
 
 // computer picks random word
@@ -107,9 +101,16 @@ document.onkeydown = function(event){
     document.getElementById("currentGuess").textContent = event.key;
     userGuess = document.getElementById("currentGuess").textContent;
     // debugger;
-    guessCheck();
-    numberOfGuesses();
-    recordGuesses(userGuess);
+    var Check = guessCheck();
+    if(Check){
+        userGuessCompare(userGuess);
+        numberOfGuesses();
+        recordGuesses(userGuess);
+    }else{
+        guesses.push(userGuess);
+        guesses.pop();
+    }
+    
     var theCorrectWord = document.getElementById("line").textContent;
     if(theCorrectWord === hangmanWord){
         showBoxArt();

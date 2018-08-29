@@ -118,7 +118,7 @@ document.onkeydown = function(event){
         randomWord();
         line = printHangmanLine();
         numberOfGuess = 21;
-        guesses =[];
+        guesses =[" "];
         recordGuesses();
         document.getElementById("numberOfGuess").textContent = 21;
         document.getElementById("currentGuess").textContent = "";
@@ -127,7 +127,7 @@ document.onkeydown = function(event){
         randomWord();
         line = printHangmanLine();
         numberOfGuess = 21;
-        guesses =[];
+        guesses =[" "];
         recordGuesses();
         document.getElementById("numberOfGuess").textContent = 0;
         document.getElementById("currentGuess").textContent = "";

@@ -1,4 +1,4 @@
-import {hangMan} from '/assets/javascript/hangman/hangman.js';
+import {hangMan} from '/assets/javascript/hangman/hangman';
 
 // computer picks random word
 hangMan.randomWord();
